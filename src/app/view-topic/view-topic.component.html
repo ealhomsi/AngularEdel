@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10">
+      <p>You are viewing <strong>{{posts.subjectText}}</strong>
+    </div>
+    <div class="col-xs-2">
+      <button [routerLink]="['/reply', topicId]" type="button" class="btn btn-default pull-right">Reply</button>
+    </div>
+    </div>
+    <div class="row" *ngFor="let post of posts">
+      <div class="col-xs-4">
+        {{post.author}}
+      </div>
+      <div class="col-xs-8">
+        {{post.bodyText}}
+    </div>
+  </div>
+</div>

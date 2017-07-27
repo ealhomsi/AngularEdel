@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row" *ngFor="let board of boardList">
+    <div class="col-sm-12">
+      <a [routerLink]="['/view-forum', board.id]">        
+        <h4><i class="fa fa-id-card"></i>&nbsp;{{board.name}}</h4>
+        <p>{{board.description}}</p>
+      </a>
+    </div>
+  </div>
+</div>

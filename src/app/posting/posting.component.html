@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+    <!-- Breadcrumbs -->
+    <div *ngIf="postingMode == 'reply'" class="col-md-12">
+      <p>Replying to <strong>{{parentTopicSubject}}</strong></p>
+    </div>
+    <div *ngIf="postingMode == 'post'" class="col-md-12">
+      <p>Creating a new topic in <strong>{{parentForumName}}</strong></p>
+    </div>
+  </div>
+
+  <!-- ResponseEvent alerts -->
+  <div class="row">
+    <div *ngIf="postResponseEvent == true" class="alert alert-success" role="alert">{{postResponseEventText}}</div>
+    <div *ngIf="postResponseEvent == false" class="alert alert-danger" role="alert">{{postResponseEventText}}</div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Subject -->
+      <input type="text" [(ngModel)]="subjectText" *ngIf="postingMode == 'post'" class="form-control" placeholder="Subject">
+
+      <!-- Body Text -->
+      <textarea [(ngModel)]="bodyText" class="form-control" rows="8" placeholder="Start typing your message."></textarea>
+
+      <!-- Posting Buttons -->
+      <button *ngIf="postingMode == 'reply'" (click)="doPost()" type="button" class="btn btn-default">Reply</button>
+      <button *ngIf="postingMode == 'post'" (click)="doPost()" type="button" class="btn btn-default">Create new topic</button>
+    </div>
+  </div>
+</div>

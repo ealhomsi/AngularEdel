@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8">
+      <p>Viewing page 1 of 1</p>  
+    </div>
+    <div class="col-xs-2">
+      <button [routerLink]="['/create-topic', forumId]" type="button" class="btn btn-default">New Topic</button>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="topicList.length > 0">
+    <div *ngFor="let topic of topicList" class="col-sm-12">
+      <a [routerLink]="['/view-topic', topic._id]">
+        <h4><i class="fa fa-id-card"></i>&nbsp;{{topic.subjectText}}</h4>
+        <p>By: {{topic.author}}</p>
+      </a>
+    </div>
+  </div>
+  <div class="row" *ngIf="topicList.length == 0">
+    <div class="well col-xs-12">
+      <p>There were no posts to be found.</p>
+    </div>
+    
+  </div>
+</div>
