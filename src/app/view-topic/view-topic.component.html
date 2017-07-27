@@ -1,18 +1,31 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <!-- This is the title -->
+  <div class="row col-xs-12">
     <div class="col-xs-10">
-      <p>You are viewing <strong>{{posts.subjectText}}</strong>
+      <p class="medium-size">You are viewing <strong>{{posts.subjectText}}</strong></p>
     </div>
+
     <div class="col-xs-2">
       <button [routerLink]="['/reply', topicId]" type="button" class="btn btn-default pull-right">Reply</button>
     </div>
-    </div>
-    <div class="row" *ngFor="let post of posts">
-      <div class="col-xs-4">
-        {{post.author}}
-      </div>
-      <div class="col-xs-8">
-        {{post.bodyText}}
-    </div>
   </div>
+
+  <!-- this is the post list -->
+  <div class="container-fluid">
+
+    <div class="row main-box col-xs-12" *ngFor="let post of posts">
+      <div class="author-name col-xs-2 well">
+        {{post.author}} <br>
+        <span class="glyphicon glyphicon-chevron-up"> </span>
+        <span> 0 </span>
+        <span class="glyphicon glyphicon-chevron-down"> </span>
+      </div>
+  
+      <div class="col-xs-9 pull-right well post">
+        {{post.bodyText}}
+      </div>
+    </div>
+
+  </div>
+  
 </div>

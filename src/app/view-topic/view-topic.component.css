@@ -5,3 +5,32 @@
 .ng-with-newlines {
     white-space: pre;
 }
+
+.medium-size {
+	font-size: 2em;
+}
+
+.author-name {
+	font-size: 1.3em;
+	border-radius: 2em;
+	text-align: center;
+}
+
+.main-box {
+	background-color: white;
+	border-radius: 2em;
+	border: solid #f2f2f2;
+	border-width: 0.1em;
+	margin: 1em 0em;
+	padding: 1.5em;
+}
+
+.vote {
+	font-size: 3em;
+}
+
+.post {
+	font-size: 2em;
+	border-radius: 1em;
+	margin-left: 1em;
+}
